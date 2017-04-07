@@ -10,15 +10,17 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-bar">
-        <FontAwesome
-        className='search-icon'
-        name='search'
-        />
-        <input placeholder="Search..."
-          value={this.state.term}
-          onChange={event => this.onInputChange(event.target.value)}
-        />
+      <div className="col-md-8">
+        <div className="search-bar">
+          <FontAwesome
+          className='search-icon'
+          name='search'
+          />
+          <input placeholder="Search..."
+            value={this.state.term}
+            onChange={event => this.onInputChange(event.target.value)}
+          />
+        </div>
       </div>
     );
   }
