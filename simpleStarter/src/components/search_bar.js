@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+var FontAwesome = require('react-fontawesome');
 
 class SearchBar extends Component {
   constructor(props) {
@@ -9,13 +10,22 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <input
+      <div className="search-bar">
+        <FontAwesome
+        className='search-icon'
+        name='search'
+        />
+        <input placeholder="Search..."
           value={this.state.term}
-          onChange={event => this.setState({ term: event.target.value})}
+          onChange={event => this.onInputChange(event.target.value)}
         />
       </div>
     );
+  }
+
+  onInputChange(term) {
+    this.setState({term});
+    this.props.onSearchTermChange(term);
   }
 }
 
